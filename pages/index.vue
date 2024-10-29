@@ -488,12 +488,19 @@ useHead({
     title: 'Accueil - Tickets.cd',
     meta: [
         { name: 'description', content: 'Holduix' }
+    ],
+    script: [
+        { src: "/assets/js/jquery.min.js"}
     ]
 });
 import { onMounted } from 'vue';
 import { useNuxtApp } from '#app';
 onMounted(() => {
     if (process.client) {
+        const { $mixitup, $$ } = useNuxtApp(); 
+        console.log(window.$);
+        console.log(window.jQuery);
+        
         if ($(".banner-carousel").length) {
             $(".banner-carousel").owlCarousel({
                 animateOut: "fadeOut",
@@ -571,7 +578,7 @@ onMounted(() => {
                 });
             });
         }
-        const { $mixitup } = useNuxtApp(); 
+
         const containerEl = document.querySelector('[data-ref~="event-filter-content"]');
         if (containerEl) {
             $mixitup(containerEl, {
@@ -587,6 +594,9 @@ onMounted(() => {
                 $(this).children(".bookmark-icon").toggleClass("bookmarked");
             });
         });
+    
     }
+
+
 });  
 </script>

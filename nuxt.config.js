@@ -53,7 +53,6 @@ export default {
         class: 'h-100'
       },
       script: [
-        { src: "/assets/js/jquery.min.js", body: true },
         { src: "/assets/js/custom.js", body: true },
       ]
     },
@@ -66,8 +65,10 @@ export default {
 
   plugins: [
     { src: "~/plugins/bootstrap.js", mode: "client" },
+    { src: '~/plugins/bootstrap-select.js', mode: 'client' },
     { src: "~/plugins/owl.js", mode: "client" },
     { src: "~/plugins/mixitup.js", mode: "client" },
+    
   ],
 
   compatibilityDate: "2024-10-29",
