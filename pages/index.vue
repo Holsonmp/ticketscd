@@ -574,12 +574,19 @@ onMounted(() => {
         const { $mixitup } = useNuxtApp(); 
         const containerEl = document.querySelector('[data-ref~="event-filter-content"]');
         if (containerEl) {
-        $mixitup(containerEl, {
-            selectors: {
-            target: '[data-ref~="mixitup-target"]'
-            }
-        });
+            $mixitup(containerEl, {
+                selectors: {
+                target: '[data-ref~="mixitup-target"]'
+                }
+            });
         }
+        $(document).ready(function () {
+            $(".bookmark-icon, .bookmark-button").on("click", function (e) {
+                e.preventDefault();
+                $(this).toggleClass("bookmarked");
+                $(this).children(".bookmark-icon").toggleClass("bookmarked");
+            });
+        });
     }
 });  
 </script>

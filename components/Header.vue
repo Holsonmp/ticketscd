@@ -38,10 +38,10 @@
 						<div class="offcanvas-body">
 							<div class="offcanvas-top-area">
 								<div class="create-bg">
-									<NuxtLink to="/login" class="offcanvas-create-btn">
+									<a href="/login" class="offcanvas-create-btn">
 										<i class="icon-calendars"></i>
 										<span>Créer un évent</span>
-									</NuxtLink>
+									</a>
 								</div>
 							</div>
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
