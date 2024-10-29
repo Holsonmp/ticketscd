@@ -48,6 +48,10 @@ export default {
       bodyAttrs: {
         class: 'd-flex flex-column h-100'
       },
+
+      htmlAttrs: {
+        class: 'h-100'
+      },
       script: [
         { src: "/assets/js/jquery.min.js", body: true },
         { src: "/assets/js/custom.js", body: true },
