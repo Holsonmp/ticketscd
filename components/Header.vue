@@ -1,8 +1,7 @@
 <template>
 	<header class="header">
 		<div class="header-inner">
-			<nav
-				class="navbar navbar-expand-lg bg-tickets tickets-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
+			<nav class="navbar navbar-expand-lg bg-tickets tickets-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
 				<div class="container header__container">
 					<div class="headerMobile__left">
 						<button class="header__menuBtn" type="button" data-bs-toggle="offcanvas"
