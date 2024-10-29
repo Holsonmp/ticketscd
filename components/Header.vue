@@ -9,7 +9,7 @@
 							<i class="icon-main-menu"></i>
 						</button>
 					</div>
-					<a class="navbar-brand order-1 order-lg-0" href="index.html">
+					<NuxtLink class="navbar-brand order-1 order-lg-0" to="/">
 						<div class="res-main-logo">
 							<img src="/assets/images/logo_tickets.png" alt="">
 						</div>
@@ -17,7 +17,7 @@
 							<img src="/assets/images/logo_tickets.png" alt="">
 							<img class="logo-inverse" src="/assets/images/dark-logo.svg" alt="">
 						</div>
-					</a>
+					</NuxtLink>
 					<div class="xl:d-none ml-30">
 						<div class="header__search js-liverSearch js-form-dd">
 							<i class="icon-search text-18"></i>
@@ -38,32 +38,32 @@
 						<div class="offcanvas-body">
 							<div class="offcanvas-top-area">
 								<div class="create-bg">
-									<a href="create.html" class="offcanvas-create-btn">
+									<NuxtLink to="/login" class="offcanvas-create-btn">
 										<i class="icon-calendars"></i>
 										<span>Créer un évent</span>
-									</a>
+									</NuxtLink>
 								</div>
 							</div>
 							<ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+									<NuxtLink class="nav-link" :class="{ active: $route.path === '/' }" aria-current="page" to="/">Accueil</NuxtLink>
 								</li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+									<NuxtLink class="nav-link dropdown-toggle" to="events" :class="{ active: $route.path === '/events' }" role="button" data-bs-toggle="dropdown"
 										aria-expanded="false">
 										Trouver des événements
-									</a>
+									</NuxtLink>
 									<ul class="dropdown-menu dropdown-submenu">
-										<li><a class="dropdown-item" href="#">Musique</a></li>
+										<li><NuxtLink class="dropdown-item" to="/events/musique">Musique</NuxtLink></li>
 										<li><a class="dropdown-item" href="#">Conférence</a></li>
 										<li><a class="dropdown-item" href="#">Sports</a></li>
 										<li><a class="dropdown-item" href="#">Arts du spectacle</a></li>
 										<li><a class="dropdown-item" href="#">Cinéma</a></li>
-										<li class="diver"><a class="dropdown-item" href="#">Tout parcourir</a></li>
+										<li class="diver"><NuxtLink class="dropdown-item" to="/events">Tout parcourir</NuxtLink></li>
 									</ul>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="pricing.html">Aide</a>
+									<NuxtLink class="nav-link" :class="{ active: $route.path === '/contact' }" to="/contact">Aide</NuxtLink>
 								</li>
 
 							</ul>

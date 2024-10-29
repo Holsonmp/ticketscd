@@ -390,23 +390,7 @@ var HolduixConfig = {
 	isRecaptchaEnabled: "0",
 	rtl: false,
 };
-if ($(".time-countdown").length) {
-	$(".time-countdown").each(function () {
-		var $this = $(this),
-			finalDate = $(this).data("countdown");
-		$this.countdown(finalDate, function (event) {
-			var $this = $(this).html(
-				event.strftime(
-					"" +
-						'<div class="counter-column"><span class="count">%D</span>Jours</div> ' +
-						'<div class="counter-column"><span class="count">%H</span>Heures</div>  ' +
-						'<div class="counter-column"><span class="count">%M</span>Minutes</div>  ' +
-						'<div class="counter-column"><span class="count">%S</span>Seconde</div>'
-				)
-			);
-		});
-	});
-}
+
 /*
 $(".testimonial-slider").owlCarousel({
 	items: 10,
