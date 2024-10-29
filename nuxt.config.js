@@ -52,7 +52,8 @@ export default {
       htmlAttrs: {
         class: 'h-100'
       },
-      script: [
+      script: [/*
+        { src: "/assets/js/jquery.min.js", body: true },*/
         { src: "/assets/js/custom.js", body: true },
       ]
     },
@@ -64,6 +65,7 @@ export default {
   ],
 
   plugins: [
+    { src: "~/plugins/jquery.js", mode: "client"  },
     { src: "~/plugins/bootstrap.js", mode: "client" },
     { src: '~/plugins/bootstrap-select.js', mode: 'client' },
     { src: "~/plugins/owl.js", mode: "client" },

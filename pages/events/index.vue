@@ -331,38 +331,36 @@
 
 </template>
 <script setup>
+import 'jquery/dist/jquery.min.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { onMounted } from 'vue';
 import { useNuxtApp } from '#app';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 useHead({
   title: 'Parcourir les événements - Tickets.cd',
   meta: [
     { name: 'description', content: 'Holduix' }
   ],
 
-  script: [
-        { src: "/assets/js/jquery.min.js"}
-    ]
 });
 
 onMounted(() => {
   const { $mixitup, $selectpicker } = useNuxtApp();
   const containerEl = document.querySelector('[data-ref~="event-filter-content"]');
   
-  if (containerEl) {
-    $mixitup(containerEl, {
-      selectors: {
-        target: '[data-ref~="mixitup-target"]'
-      }
+    if (containerEl) {
+        $mixitup(containerEl, {
+        selectors: {
+            target: '[data-ref~="mixitup-target"]'
+        }
+        });
+    }
+    $(document).ready(function () {
+        $(".bookmark-icon, .bookmark-button").on("click", function (e) {
+            e.preventDefault();
+            $(this).toggleClass("bookmarked");
+            $(this).children(".bookmark-icon").toggleClass("bookmarked");
+        });
     });
-  }
-  $(document).ready(function () {
-	$(".bookmark-icon, .bookmark-button").on("click", function (e) {
-		e.preventDefault();
-		$(this).toggleClass("bookmarked");
-		$(this).children(".bookmark-icon").toggleClass("bookmarked");
-	});
-});
 
   $selectpicker();
 });
